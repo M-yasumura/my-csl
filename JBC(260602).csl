@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <style xmlns="http://purl.org/net/xbiblio/csl" class="in-text" version="1.0" demote-non-dropping-particle="sort-only" default-locale="en-US">
   <info>
-    <title>The Journal of Biological Chemistry</title>
-    <title-short>JBC</title-short>
-    <id>http://www.zotero.org/styles/journal-of-biological-chemistry</id>
-    <link href="http://www.zotero.org/styles/journal-of-biological-chemistry" rel="self"/>
+    <title>JBC custom no DOI et al</title>
+    <title-short>JBC custom</title-short>
+    <id>http://www.zotero.org/styles/jbc-custom-no-doi-et-al</id>
+    <link href="http://www.zotero.org/styles/jbc-custom-no-doi-et-al" rel="self"/>
     <link href="http://www.jbc.org/site/misc/ifora.xhtml#references" rel="documentation"/>
     <author>
       <name>Julian Onions</name>
@@ -36,9 +36,7 @@
     </names>
   </macro>
   <macro name="author">
-    <names variable="author"
-         et-al-min="7"
-         et-al-use-first="6">
+    <names variable="author">
       <name name-as-sort-order="all" and="text" sort-separator=", " initialize-with=". " delimiter=", " delimiter-precedes-last="always"/>
       <label form="short" prefix=" (" suffix=")"/>
       <substitute>
@@ -91,18 +89,18 @@
     </choose>
   </macro>
   <macro name="locator">
-  <choose>
-    <if variable="page volume" match="all">
-      <group delimiter=", ">
-        <text variable="volume" font-weight="bold"/>
-        <text variable="page"/>
-      </group>
-    </if>
-    <else>
-      <text macro="access"/>
-    </else>
-  </choose>
-</macro>
+    <choose>
+      <if variable="page volume" match="all">
+        <group delimiter=", ">
+          <text variable="volume" font-weight="bold"/>
+          <text variable="page"/>
+        </group>
+      </if>
+      <else>
+        <text macro="access"/>
+      </else>
+    </choose>
+  </macro>
   <citation collapse="citation-number">
     <sort>
       <key variable="citation-number"/>
@@ -111,7 +109,7 @@
       <text variable="citation-number"/>
     </layout>
   </citation>
-  <bibliography second-field-align="flush" entry-spacing="0">
+  <bibliography et-al-min="7" et-al-use-first="6" second-field-align="flush" entry-spacing="0">
     <layout>
       <text variable="citation-number" suffix=". "/>
       <group delimiter=" " suffix=" ">
