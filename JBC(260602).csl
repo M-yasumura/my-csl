@@ -89,18 +89,21 @@
     </choose>
   </macro>
   <macro name="locator">
-    <choose>
-      <if variable="page volume" match="all">
-        <group delimiter=", ">
-          <text variable="volume" font-weight="bold"/>
-          <text variable="page"/>
-        </group>
-      </if>
-      <else>
-        <text macro="access"/>
-      </else>
-    </choose>
-  </macro>
+  <choose>
+    <if variable="volume">
+      <group delimiter=", ">
+        <text variable="volume" font-weight="bold"/>
+        <text variable="page"/>
+      </group>
+    </if>
+    <else-if variable="page">
+      <text variable="page"/>
+    </else-if>
+    <else>
+      <text macro="access"/>
+    </else>
+  </choose>
+</macro>
   <citation collapse="citation-number">
     <sort>
       <key variable="citation-number"/>
